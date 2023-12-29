@@ -146,7 +146,7 @@ body {
 .address {
   display: none;
 }
-/* .section-button {
+.menu-btn {
   cursor: pointer;
   display: flex;
   width: 24px;
@@ -156,100 +156,88 @@ body {
   padding: 0;
   border-color: transparent;
   background-color: transparent;
-} */
+}
 /* mobile menu */
 .mobile-menu {
-  width: 100%;
-  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  opacity: 0;
-  transform: translateX(100%);
-  pointer-events: none;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 72px 16px 40px;
+
+  background-color: #fff;
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: transform 300ms ease, visibility 300ms ease;
 }
 
 .mobile-menu.is-open {
-  transform: translateX(0%);
-  pointer-events: auto;
+  transform: translateX(0);
+  visibility: visible;
 }
-
-.mobile-menu-box {
-  width: 100vw;
-  height: 100vh;
+.mobile-menu .close-btn {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 24px;
+  right: 24px;
+
+  width: 24px;
+  height: 24px;
+
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transform: translate(-50%, -50%) scale(1);
-  border-radius: 4px;
-  background-color: #fff;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
-    0px 1px 2px rgba(0, 0, 0, 0.2);
-  padding: 72px 16px 24px 16px;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e7e9fc;
+  border-radius: 50%;
 }
 
 .nav-list-mob {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+  margin-bottom: auto;
 }
-
+.mobile-menu-item:not(:last-child) {
+  margin-bottom: 40px;
+}
 .nav-links-list-content-mob {
-  color: var(--NAVY-BLUE, #2e2f42);
   font-size: 36px;
   font-weight: 700;
-  line-height: 1.11; /* 111.111% */
-  letter-spacing: 0.02em;
-  text-decoration: none;
+  line-height: 40px; /* 111.111% */
+  letter-spacing: 0.72px;
   text-transform: capitalize;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--NAVY-BLUE, #2e2f42);
 }
 
 .nav-links-list-content-mob.current {
   color: #404bbf;
 }
-
-.nav-links-list-content-mob:hover,
-.nav-links-list-content-mob:focus {
-  color: #404bbf;
-}
-
-.mob-adr-box {
-  margin-bottom: 40px;
-}
-
 .address-links-list-mob {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
   margin-bottom: 48px;
 }
-
-.address-links-list-content-mob {
-  color: var(--SLATE, #434455);
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.2px; /* 120% */
-  letter-spacing: 0.02em;
-  text-decoration: none;
-  font-style: normal;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.address-links-list-mob .mobile-menu-item:not(:last-child) {
+  margin-bottom: 24px;
 }
-
+.address-links-list-content-mob {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 120% */
+  letter-spacing: 0.4px;
+  color: var(--SLATE, #434455);
+}
+.address-links-list-content-mob.accent {
+  color: var(--IRIS, #4d5ae5);
+}
 .socials-list-mob {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 40px;
 }
-
+.socials-list-mob .socials-item-link {
+  color: #f4f4fd;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+}
 @media screen and (min-width: 768px) {
   .mobile-menu,
   .mobile-menu.is-open {
@@ -850,7 +838,7 @@ body {
   padding: 72px 16px 24px 16px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-window-close {
+.close-btn {
   cursor: pointer;
   position: absolute;
   top: 24px;
@@ -867,15 +855,17 @@ body {
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 0;
 }
-.modal-window-close:hover,
-.modal-window-close:focus {
+
+.close-btn .backdrop:hover,
+.close-btn .backdrop:focus {
   background-color: #404bbf;
   border: none;
   fill: #ffffff;
 }
-.modal-window-close-svg {
+.close-icon {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .modal-window-header {
   text-align: center;
   margin-bottom: 16px;
