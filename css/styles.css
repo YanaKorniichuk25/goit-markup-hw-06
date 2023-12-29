@@ -98,6 +98,15 @@ body {
   padding-top: 96px;
   padding-bottom: 96px;
 }
+.second-heading {
+  letter-spacing: 0.02em; /* 0.02em */
+}
+.second-heading {
+  margin-bottom: 72px;
+  font-size: 36px;
+  line-height: 1.11;
+  text-transform: capitalize;
+}
 @media screen and (min-width: 1158px) {
   .section-two,
   .team,
