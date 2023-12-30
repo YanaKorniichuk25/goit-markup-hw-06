@@ -306,10 +306,10 @@ body {
     gap: 12px;
   }
   .contacts {
-    font-size: 12px;
     color: var(--clr-slate-500);
     text-decoration: none;
   }
+
   .contacts:hover {
     color: #404bbf;
   }
@@ -329,6 +329,9 @@ body {
   .address-list {
     flex-direction: row;
     gap: 40px;
+  }
+  .contacts {
+    font-size: 16px;
   }
 }
 .section {
@@ -770,6 +773,9 @@ body {
   }
   .logo-text-box {
     margin-bottom: 72px;
+  }
+  .contacts {
+    font-size: 12px;
   }
 }
 @media screen and (min-width: 768px) {
