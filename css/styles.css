@@ -584,11 +584,6 @@ body {
   flex-direction: column;
   gap: 48px;
 }
-.portfo-item {
-  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
-    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
-    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
-}
 .portfo-item:hover .app-descr-text {
   transform: translateY(0%);
 }
@@ -624,6 +619,13 @@ body {
 .portfo-item-text {
   font-weight: 400;
 }
+@media screen and (max-width: 1157.98px) {
+  .portfo-item {
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+      0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+      0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+  }
+}
 @media screen and (min-width: 768px) {
   .portfo-list {
     display: flex;
@@ -647,6 +649,12 @@ body {
   }
   .portfo-item {
     flex-basis: calc((100% - 48px) / 3);
+  }
+  .portfo-item:hover,
+  .portfo-item:focus {
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+      0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+      0px 1px 6px 0px rgba(46, 47, 66, 0.08);
   }
   .section-four-content:hover,
   .section-four-content:focus {
